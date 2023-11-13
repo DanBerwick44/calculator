@@ -1,27 +1,33 @@
 function add(input, result){
     let result = input + result
+    console.log("add()")
     return result
 }
 function subtract(input, result){
     let result = input - result
+    console.log("subtract()")
     return result
 }
 function multiply(input,result){
     let result = input * result
+    console.log("multiplyt()")
     return result
 }
 function divide(input, result){
     let result = input / result
+    console.log("divide")
     return result
 }
 
-var result = 0
+linkConfirm()(
+    console.log("Button works!")
+)
 
 
-function recieveInput(buttonPrompt){
+function clickHandler(buttonPrompt){
     var input = ""
     if (typeof buttonPrompt == "number"){
-    input = string(input) + string(buttonPrompt)
+    input = String(input) + String(buttonPrompt)
         // Assmebles numbers as strings
     }
 
