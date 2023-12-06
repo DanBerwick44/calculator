@@ -1,48 +1,55 @@
-function add(input, result){
-    let result = input + result
-    console.log("add()")
-    return result
+var memory = []
+
+function add(){
+    memory.push(currentInput)
+    memory.push("plus")
+    currentInput = ""
+    console.log("memory holds " + memory)
 }
-function subtract(input, result){
-    let result = input - result
-    console.log("subtract()")
-    return result
+function subtract(){
+    memory.push(currentInput)
+    memory.push("minus")
+    currentInput = ""
+    console.log("memory holds " + memory)
 }
-function multiply(input,result){
-    let result = input * result
-    console.log("multiplyt()")
-    return result
+function multiply(){
+    memory.push(currentInput)
+    memory.push("times")
+    currentInput = ""
+    console.log("memory holds " + memory)
 }
-function divide(input, result){
-    let result = input / result
-    console.log("divide")
-    return result
+function divide(){
+    memory.push(currentInput)
+    memory.push("divided by")
+    currentInput = ""
+    console.log("memory holds " + memory)
 }
 
-linkConfirm()(
+function linkConfirm(){
     console.log("Button works!")
-)
-
+}
+var currentInput = ""
 
 function clickHandler(buttonPrompt){
-    var input = ""
-    if (typeof buttonPrompt == "number"){
-    input = String(input) + String(buttonPrompt)
-        // Assmebles numbers as strings
-    }
-
+    console.log("push detected as " + String(buttonPrompt))
     if (buttonPrompt == "add"){
-        add(input, result)
+        add()
     }
-    if (buttonPrompt == "subtract"){
-        subtract(input, result)
+    else if (buttonPrompt == "subtract"){
+        subtract()
     }
-    if (buttonPrompt == "multiply"){
-        multiply(input, result)
+    else if (buttonPrompt == "multiply"){
+        multiply()
     }
-    if (buttonPrompt == "divide"){
-        divide(input, result)
+    else if (buttonPrompt == "divide"){
+        divide()
     }
-    if (buttonPrompt == "equals")
-        return result
+    else if (buttonPrompt == "equals"){
+        return
+    }
+    else{
+        currentInput = currentInput + String(buttonPrompt)
+        console.log("currentInput holds " + currentInput)
+            // Assmebles numbers as strings
+    }
 }
